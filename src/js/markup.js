@@ -10,7 +10,6 @@ function generateMarkupSelect(arrData) {
 
 function generateMarkupInfoCat(arrData) {
     const catData = arrData[0].breeds[0]
-    
     const catImage = arrData[0].url
 
      const marcup = `

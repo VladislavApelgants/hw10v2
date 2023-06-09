@@ -1,20 +1,20 @@
-import { getCats, getOneCat} from "./api";
-import {generateMarkupInfoCat, generateMarkupSelect} from './markup'
-import refs from './refs'
+import { getCats, getOneCat} from "./js/api";
+import {generateMarkupInfoCat, generateMarkupSelect} from './js/markup'
 import SlimSelect from 'slim-select'
 import { Report } from 'notiflix/build/notiflix-report-aio';
+import refs from './js/refs'
 
 const { select, catInfo, loader } = refs
-
 
 const sel = new SlimSelect({
     select: '#breed-select'
 })
 
-
 select.addEventListener('change', onChooseCat)
 
-getCats().then(elem =>sel.setData(generateMarkupSelect(elem))).catch(showError);
+getCats()
+    .then(elem => sel.setData(generateMarkupSelect(elem)))
+    .catch(showError);
 
 
 function onChooseCat(e) {
